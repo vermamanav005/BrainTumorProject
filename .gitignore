@@ -1,0 +1,11 @@
+# Ignore all image files in outputs/inspect directory
+outputs/inspect/*.jpg
+outputs/inspect/*.jpeg
+outputs/inspect/*.png
+outputs/inspect/*.gif
+outputs/inspect/*.bmp
+outputs/inspect/*.tiff
+outputs/inspect/*.webp
+
+# Keep the directory structure
+!outputs/inspect/.gitkeep
