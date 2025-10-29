@@ -6,6 +6,8 @@ outputs/inspect/*.gif
 outputs/inspect/*.bmp
 outputs/inspect/*.tiff
 outputs/inspect/*.webp
+basic/cleaned
+
 
 # Keep the directory structure
 !outputs/inspect/.gitkeep
