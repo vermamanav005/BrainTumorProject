@@ -8,7 +8,7 @@ outputs/inspect/*.tiff
 outputs/inspect/*.webp
 basic/cleaned
 tumorNet_lite/cleaned
-
+tumorNet_lite/cleaned2
 
 # Keep the directory structure
 !outputs/inspect/.gitkeep
