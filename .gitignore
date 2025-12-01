@@ -1,4 +1,32 @@
-# Ignore all image files in outputs/inspect directory
+# Python
+__pycache__/
+*.py[cod]
+*$py.class
+*.so
+.Python
+*.egg-info/
+dist/
+build/
+
+# Jupyter
+.ipynb_checkpoints/
+*.ipynb_checkpoints
+
+# Data directories (large files)
+raw_data/
+preprocessed_canonical/
+cleaned/
+cleaned2/
+
+# Model checkpoints and outputs
+checkpoints/*.pth
+*.pth
+results/*.png
+results/*.json
+logs/
+figures/*.png
+
+# Ignore image files in outputs
 outputs/inspect/*.jpg
 outputs/inspect/*.jpeg
 outputs/inspect/*.png
@@ -6,9 +34,21 @@ outputs/inspect/*.gif
 outputs/inspect/*.bmp
 outputs/inspect/*.tiff
 outputs/inspect/*.webp
-basic/cleaned
-tumorNet_lite/cleaned
-tumorNet_lite/cleaned2
 
-# Keep the directory structure
+# IDE
+.vscode/
+.idea/
+*.swp
+*.swo
+*~
+
+# OS
+.DS_Store
+Thumbs.db
+
+# Keep directory structure
 !outputs/inspect/.gitkeep
+!checkpoints/.gitkeep
+!results/.gitkeep
+!logs/.gitkeep
+!figures/.gitkeep
