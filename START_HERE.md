@@ -1,7 +1,19 @@
 # ⚡ START HERE - Quick Reference
 
 **Last Updated:** December 1, 2025  
-**Status:** ✅ Ready to use
+**Status:** ✅ Ready to use  
+**Platform:** ✅ Windows 11 Compatible
+
+---
+
+## 🪟 Windows Users - Read This First!
+
+**Complete Windows setup guide:** `WINDOWS_SETUP.md` ⭐
+
+**Quick Windows setup:**
+1. Install Python 3.8+ (check "Add to PATH")
+2. Open Command Prompt or PowerShell
+3. Follow commands below
 
 ---
 
@@ -28,10 +40,17 @@ config.yaml                           ← Configuration (in parent dir)
 
 ---
 
-## 🚀 Quick Start (3 Commands)
+## 🚀 Quick Start (3 Commands) - Windows 11
 
-```bash
+```cmd
 cd tumorNet_lite
+pip install -r requirements.txt
+jupyter notebook
+```
+
+Or using PowerShell:
+```powershell
+Set-Location tumorNet_lite
 pip install -r requirements.txt
 jupyter notebook
 ```
@@ -64,11 +83,13 @@ Then open `01_setup_and_config.ipynb` and run all cells.
 
 After running notebooks, find results in:
 ```
-../checkpoints/          ← Saved models (.pth files)
-../results/              ← Metrics, plots, JSON
-../preprocessed_canonical/   ← Preprocessed images
-../logs/                 ← Training logs
+..\checkpoints\          ← Saved models (.pth files)
+..\results\              ← Metrics, plots, JSON
+..\preprocessed_canonical\   ← Preprocessed images
+..\logs\                 ← Training logs
 ```
+
+Note: Windows uses backslashes (\) but Python handles forward slashes (/) automatically.
 
 ---
 
@@ -84,18 +105,19 @@ After running notebooks, find results in:
 ## 🆘 Troubleshooting
 
 **Error: "Module not found"**
-```bash
+```cmd
 pip install -r requirements.txt
 ```
 
 **Error: "Preprocessed data not found"**
-```bash
-# Run preprocessing_FIXED.ipynb first
+```cmd
+REM Run preprocessing_FIXED.ipynb first
 ```
 
 **Error: "Out of memory"**
-```bash
-# Edit config.yaml, reduce batch_size to 16 or 8
+```cmd
+REM Edit config.yaml, reduce batch_size to 16 or 8
+REM Windows note: Set num_workers: 0 in config.yaml
 ```
 
 ---
@@ -103,6 +125,7 @@ pip install -r requirements.txt
 ## 📚 Documentation Files
 
 If you want more details:
+- 🪟 `WINDOWS_SETUP.md` - Complete Windows 11 setup guide
 - `NOTEBOOK_EXECUTION_ORDER.md` - Detailed execution guide
 - `PROJECT_STRUCTURE.md` - Clean project structure
 - `CLEANUP_SUMMARY.md` - What was cleaned
@@ -113,8 +136,15 @@ If you want more details:
 
 ## ✨ You're Ready!
 
-```bash
+**Windows Command Prompt:**
+```cmd
 cd tumorNet_lite
+jupyter notebook 01_setup_and_config.ipynb
+```
+
+**Windows PowerShell:**
+```powershell
+Set-Location tumorNet_lite
 jupyter notebook 01_setup_and_config.ipynb
 ```
 

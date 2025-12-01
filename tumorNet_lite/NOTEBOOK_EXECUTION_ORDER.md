@@ -55,8 +55,16 @@
 ## 📋 Detailed Execution Order
 
 ### **Step 1: Initial Setup**
-```bash
-cd /Users/manavverma/Documents/desktop/TumorNetLite/BrainTumorProject/tumorNet_lite
+```cmd
+REM Windows Command Prompt
+cd C:\path\to\BrainTumorProject\tumorNet_lite
+jupyter notebook
+```
+
+Or using PowerShell:
+```powershell
+# Windows PowerShell
+Set-Location C:\path\to\BrainTumorProject\tumorNet_lite
 jupyter notebook
 ```
 
@@ -64,7 +72,7 @@ Open and run in order:
 1. `01_setup_and_config.ipynb` → Run all cells
 2. `preprocessing_FIXED.ipynb` → Run all cells (creates preprocessed_canonical/)
 
-**Verify:** Check that `../preprocessed_canonical/` exists with 4 subdirectories
+**Verify:** Check that `..\preprocessed_canonical\` exists with 4 subdirectories
 
 ---
 
@@ -78,9 +86,9 @@ Open and run in order:
 - Evaluates on held-out test set (first and only time)
 
 **Output files:**
-- `../checkpoints/tumornet_lite_main_YYYYMMDD_HHMMSS.pth`
-- `../results/tumornet_lite_main_YYYYMMDD_HHMMSS_*.png`
-- `../results/tumornet_lite_main_YYYYMMDD_HHMMSS_complete_results.json`
+- `..\checkpoints\tumornet_lite_main_YYYYMMDD_HHMMSS.pth`
+- `..\results\tumornet_lite_main_YYYYMMDD_HHMMSS_*.png`
+- `..\results\tumornet_lite_main_YYYYMMDD_HHMMSS_complete_results.json`
 
 ---
 
@@ -95,8 +103,8 @@ Open and run in order:
 **Expected pattern:** Full > Partial > Baseline (monotonic)
 
 **Output:**
-- `../results/ablation_study_YYYYMMDD_HHMMSS.json`
-- `../results/ablation_comparison.png`
+- `..\results\ablation_study_YYYYMMDD_HHMMSS.json`
+- `..\results\ablation_comparison.png`
 
 ---
 
@@ -111,7 +119,7 @@ Open and run in order:
 **Output:**
 - Individual checkpoints for each model
 - Comparison table and visualizations
-- `../results/baseline_comparison_YYYYMMDD_HHMMSS.json`
+- `..\results\baseline_comparison_YYYYMMDD_HHMMSS.json`
 
 ---
 
@@ -142,12 +150,12 @@ Open and run in order:
 ## ✅ Verification Checklist
 
 **After Step 1 (Setup + Preprocessing):**
-- [ ] `preprocessed_canonical/` exists
-- [ ] Contains train/, val/, internal_test/, heldout_test/
+- [ ] `preprocessed_canonical\` exists
+- [ ] Contains train\, val\, internal_test\, heldout_test\
 - [ ] preprocessing_report.txt shows "✓ No data leakage"
 
 **After Step 2 (Main Training):**
-- [ ] Checkpoint saved in checkpoints/
+- [ ] Checkpoint saved in checkpoints\
 - [ ] Training curves show smooth convergence
 - [ ] Held-out test accuracy reported
 - [ ] All PNG visualizations generated
@@ -174,6 +182,8 @@ Open and run in order:
 
 ### **"Out of memory"**
 → Edit `config.yaml`: reduce `batch_size` to 16 or 8
+
+**Windows-specific:** Also ensure `num_workers: 0` in config.yaml
 
 ### **"Import error: No module"**
 → Install: `pip install torch torchvision pyyaml scikit-learn matplotlib seaborn tqdm`
@@ -219,23 +229,31 @@ Open and run in order:
 ## 📞 Quick Reference
 
 **To restart from scratch:**
-```bash
-# Delete all outputs
-rm -rf ../preprocessed_canonical ../checkpoints ../results
+```cmd
+REM Delete all outputs (Windows Command Prompt)
+rmdir /s /q ..\preprocessed_canonical ..\checkpoints ..\results
+
+REM Run notebooks 1-2 again
+```
+
+Or using PowerShell:
+```powershell
+# Delete all outputs (Windows PowerShell)
+Remove-Item -Recurse -Force ..\preprocessed_canonical, ..\checkpoints, ..\results
 
 # Run notebooks 1-2 again
 ```
 
 **To rerun just training:**
-```bash
-# Keep preprocessing, just retrain
-# Delete checkpoints, then run notebook 2
-rm ../checkpoints/*.pth
+```cmd
+REM Keep preprocessing, just retrain
+REM Delete checkpoints, then run notebook 2
+del ..\checkpoints\*.pth
 ```
 
 **To compare different hyperparameters:**
-```bash
-# Edit config.yaml, then rerun from notebook 2
+```cmd
+REM Edit config.yaml, then rerun from notebook 2
 ```
 
 ---

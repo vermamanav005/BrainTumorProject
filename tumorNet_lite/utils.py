@@ -37,16 +37,33 @@ warnings.filterwarnings('ignore')
 
 def load_config(config_path: str = 'config.yaml') -> dict:
     """
-    Load configuration from YAML file.
+    Load configuration from YAML file with cross-platform path handling.
     
     Args:
         config_path: Path to config.yaml file
         
     Returns:
-        Configuration dictionary
+        Configuration dictionary with resolved paths
     """
+    # Convert to Path object for cross-platform compatibility
+    config_path = Path(config_path)
+    
     with open(config_path, 'r') as f:
         config = yaml.safe_load(f)
+    
+    # Resolve relative paths to absolute paths (Windows-compatible)
+    if 'paths' in config:
+        project_root = Path(config['paths'].get('project_root', '.')).resolve()
+        config['paths']['project_root'] = str(project_root)
+        
+        # Convert all relative paths to absolute
+        for key in ['raw_data', 'preprocessed_data', 'checkpoints', 'results', 'logs', 'figures']:
+            if key in config['paths']:
+                path_value = config['paths'][key]
+                # If it's a relative path, make it absolute relative to project_root
+                if not Path(path_value).is_absolute():
+                    config['paths'][key] = str(project_root / path_value)
+    
     return config
 
 
