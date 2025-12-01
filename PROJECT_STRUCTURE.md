@@ -2,6 +2,8 @@
 
 **Clean, organized research project for brain tumor classification using deep learning.**
 
+**✅ Windows 11 Compatible** - All paths and configurations updated for Windows!
+
 ---
 
 ## 📁 Project Structure
@@ -57,13 +59,21 @@ BrainTumorProject/
 ## 🚀 Quick Start
 
 ### **1. Install Dependencies**
-```bash
+```cmd
+REM Windows Command Prompt
 cd tumorNet_lite
 pip install -r requirements.txt
 ```
 
+Or using PowerShell:
+```powershell
+# Windows PowerShell
+Set-Location tumorNet_lite
+pip install -r requirements.txt
+```
+
 ### **2. Run Notebooks in Order**
-```bash
+```cmd
 jupyter notebook
 ```
 
@@ -76,9 +86,11 @@ Open and execute:
 
 ### **3. View Results**
 Results will be saved in:
-- `../checkpoints/` - Model checkpoints
-- `../results/` - Metrics, plots, JSON files
-- `../logs/` - Training logs
+- `..\checkpoints\` - Model checkpoints
+- `..\results\` - Metrics, plots, JSON files
+- `..\logs\` - Training logs
+
+**Note:** Windows uses backslashes, but Python handles forward slashes automatically.
 
 ---
 
@@ -129,6 +141,7 @@ Old experiments and deprecated files have been moved to `archive/`:
 
 ## 📚 Documentation
 
+- **🪟 Windows Setup:** `WINDOWS_SETUP.md` ⭐ **START HERE for Windows 11!**
 - **Quick Start:** `README_QUICKSTART.md`
 - **Execution Order:** `tumorNet_lite/NOTEBOOK_EXECUTION_ORDER.md`
 - **Bug Analysis:** `BUGS_IDENTIFIED.md`
@@ -165,7 +178,7 @@ If you use this code, please cite:
 ## 🆘 Troubleshooting
 
 **Issue:** "Module not found"  
-**Solution:** `pip install -r tumorNet_lite/requirements.txt`
+**Solution:** `pip install -r tumorNet_lite\requirements.txt`
 
 **Issue:** "Preprocessed data not found"  
 **Solution:** Run `preprocessing_FIXED.ipynb` first
@@ -173,7 +186,13 @@ If you use this code, please cite:
 **Issue:** "Out of memory"  
 **Solution:** Reduce `batch_size` in `config.yaml`
 
-See `NOTEBOOK_EXECUTION_ORDER.md` for more troubleshooting tips.
+**Issue:** "num_workers error on Windows"  
+**Solution:** Set `num_workers: 0` in `config.yaml` (required for Windows)
+
+**Issue:** "Path not found"  
+**Solution:** Use forward slashes (/) in paths, even on Windows
+
+See `WINDOWS_SETUP.md` for more Windows-specific troubleshooting.
 
 ---
 

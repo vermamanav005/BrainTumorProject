@@ -11,23 +11,25 @@
 # ============================================================================
 
 # ----------------------------------------------------------------------------
-# PATHS
+# PATHS (Windows-compatible)
 # ----------------------------------------------------------------------------
 paths:
-  # Root directory of project
-  project_root: "/Users/manavverma/Documents/desktop/TumorNetLite/BrainTumorProject"
+  # Root directory of project (use forward slashes or relative path)
+  # For Windows: Use forward slashes (/) instead of backslashes (\)
+  # Example: "C:/Users/YourName/BrainTumorProject" or "." for current directory
+  project_root: "."
   
   # Raw data (original, unmodified)
-  raw_data: "${paths.project_root}/raw_data/Brain_Tumor_MRI_Dataset"
+  raw_data: "raw_data/Brain_Tumor_MRI_Dataset"
   
   # Preprocessed data (canonical source for ALL experiments)
-  preprocessed_data: "${paths.project_root}/preprocessed_canonical"
+  preprocessed_data: "preprocessed_canonical"
   
-  # Output directories
-  checkpoints: "${paths.project_root}/checkpoints"
-  results: "${paths.project_root}/results"
-  logs: "${paths.project_root}/logs"
-  figures: "${paths.project_root}/figures"
+  # Output directories (relative to project_root)
+  checkpoints: "checkpoints"
+  results: "results"
+  logs: "logs"
+  figures: "figures"
 
 # ----------------------------------------------------------------------------
 # DATA CONFIGURATION
@@ -94,7 +96,7 @@ training:
   batch_size: 32
   
   # Number of data loading workers
-  num_workers: 0  # 0 for Windows compatibility, 2-4 for Linux/Mac
+  num_workers: 0  # Windows: Use 0, Linux/Mac: Use 2-4
   
   # Pin memory for faster GPU transfer
   pin_memory: true
@@ -336,12 +338,12 @@ logging:
   
   # Log to file
   log_to_file: true
-  log_file: "${paths.outputs.logs}/experiment_{timestamp}.log"
+  log_file: "logs/experiment_{timestamp}.log"
   
   # TensorBoard logging
   tensorboard:
     enabled: false
-    log_dir: "${paths.outputs.logs}/tensorboard"
+    log_dir: "logs/tensorboard"
   
   # Weights & Biases logging
   wandb:
