@@ -1,0 +1,41 @@
+# TumorNet-Lite Requirements
+# Python >= 3.8 recommended
+
+# Core Deep Learning
+torch>=1.12.0
+torchvision>=0.13.0
+
+# Image Processing
+opencv-python>=4.6.0
+Pillow>=9.0.0
+
+# Scientific Computing
+numpy>=1.21.0
+pandas>=1.3.0
+
+# Visualization
+matplotlib>=3.5.0
+seaborn>=0.11.0
+
+# Machine Learning & Metrics
+scikit-learn>=1.0.0
+scipy>=1.7.0
+
+# Progress Bars
+tqdm>=4.62.0
+
+# Optional: For advanced experiments
+# tensorboard>=2.8.0  # Training visualization
+# grad-cam>=1.4.0     # Attention visualization
+# captum>=0.5.0       # Model interpretability
+# thop>=0.1.0         # FLOPs calculation
+# umap-learn>=0.5.0   # UMAP dimensionality reduction (faster than t-SNE)
+
+# Development
+jupyter>=1.0.0
+ipykernel>=6.0.0
+
+# Note: Install PyTorch with CUDA support for GPU acceleration
+# Visit: https://pytorch.org/get-started/locally/
+# Example for CUDA 11.8:
+# pip install torch torchvision --index-url https://download.pytorch.org/whl/cu118
