@@ -16,26 +16,26 @@
 paths:
   # Root directory of project (use forward slashes or relative path)
   # For Windows: Use forward slashes (/) instead of backslashes (\)
-  # Example: "C:/Users/YourName/BrainTumorProject" or "." for current directory
-  project_root: "."
+  project_root: "C:/Users/manav/Documents/GitHub/BrainTumorProject"
   
   # Raw data (original, unmodified)
-  raw_data: "raw_data/Brain_Tumor_MRI_Dataset"
+  # This should point to your BrainDataSet folder containing Training/ and Testing/
+  raw_data: "C:/Users/manav/Documents/GitHub/BrainTumorProject/BrainDataSet"
   
   # Preprocessed data (canonical source for ALL experiments)
-  preprocessed_data: "preprocessed_canonical"
+  preprocessed_data: "C:/Users/manav/Documents/GitHub/BrainTumorProject/preprocessed_canonical"
   
-  # Output directories (relative to project_root)
-  checkpoints: "checkpoints"
-  results: "results"
-  logs: "logs"
-  figures: "figures"
+  # Output directories
+  checkpoints: "C:/Users/manav/Documents/GitHub/BrainTumorProject/checkpoints"
+  results: "C:/Users/manav/Documents/GitHub/BrainTumorProject/results"
+  logs: "C:/Users/manav/Documents/GitHub/BrainTumorProject/logs"
+  figures: "C:/Users/manav/Documents/GitHub/BrainTumorProject/figures"
 
 # ----------------------------------------------------------------------------
 # DATA CONFIGURATION
 # ----------------------------------------------------------------------------
 data:
-  # Class names (in order)
+  # Class names (in order) - must match folder names in BrainDataSet/Training/ and Testing/
   class_names: ['glioma', 'meningioma', 'notumor', 'pituitary']
   num_classes: 4
   

@@ -57,14 +57,14 @@
 ### **Step 1: Initial Setup**
 ```cmd
 REM Windows Command Prompt
-cd C:\path\to\BrainTumorProject\tumorNet_lite
+cd C:\Users\manav\Documents\GitHub\BrainTumorProject\tumorNet_lite
 jupyter notebook
 ```
 
 Or using PowerShell:
 ```powershell
 # Windows PowerShell
-Set-Location C:\path\to\BrainTumorProject\tumorNet_lite
+Set-Location C:\Users\manav\Documents\GitHub\BrainTumorProject\tumorNet_lite
 jupyter notebook
 ```
 

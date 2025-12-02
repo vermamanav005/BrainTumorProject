@@ -43,14 +43,14 @@ config.yaml                           ← Configuration (in parent dir)
 ## 🚀 Quick Start (3 Commands) - Windows 11
 
 ```cmd
-cd tumorNet_lite
+cd C:\Users\manav\Documents\GitHub\BrainTumorProject\tumorNet_lite
 pip install -r requirements.txt
 jupyter notebook
 ```
 
 Or using PowerShell:
 ```powershell
-Set-Location tumorNet_lite
+Set-Location C:\Users\manav\Documents\GitHub\BrainTumorProject\tumorNet_lite
 pip install -r requirements.txt
 jupyter notebook
 ```
@@ -138,13 +138,13 @@ If you want more details:
 
 **Windows Command Prompt:**
 ```cmd
-cd tumorNet_lite
+cd C:\Users\manav\Documents\GitHub\BrainTumorProject\tumorNet_lite
 jupyter notebook 01_setup_and_config.ipynb
 ```
 
 **Windows PowerShell:**
 ```powershell
-Set-Location tumorNet_lite
+Set-Location C:\Users\manav\Documents\GitHub\BrainTumorProject\tumorNet_lite
 jupyter notebook 01_setup_and_config.ipynb
 ```
 

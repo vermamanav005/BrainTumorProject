@@ -27,7 +27,7 @@ Download from: https://git-scm.com/download/win
 ### Option 1: Command Prompt
 ```cmd
 REM 1. Navigate to project directory
-cd C:\path\to\BrainTumorProject
+cd C:\Users\manav\Documents\GitHub\BrainTumorProject
 
 REM 2. Go to working directory
 cd tumorNet_lite
@@ -42,7 +42,7 @@ jupyter notebook
 ### Option 2: PowerShell
 ```powershell
 # 1. Navigate to project directory
-Set-Location C:\path\to\BrainTumorProject
+Set-Location C:\Users\manav\Documents\GitHub\BrainTumorProject
 
 # 2. Go to working directory
 Set-Location tumorNet_lite
@@ -162,18 +162,16 @@ pip3 install torch torchvision torchaudio
 
 ### Windows Path Examples
 
-**Absolute paths (forward slashes work!):**
+**Your project paths (already configured):**
 ```yaml
-project_root: "C:/Users/YourName/Documents/BrainTumorProject"
-raw_data: "C:/Users/YourName/Documents/BrainTumorProject/raw_data/Brain_Tumor_MRI_Dataset"
+project_root: "C:/Users/manav/Documents/GitHub/BrainTumorProject"
+raw_data: "C:/Users/manav/Documents/GitHub/BrainTumorProject/BrainDataSet"
+preprocessed_data: "C:/Users/manav/Documents/GitHub/BrainTumorProject/preprocessed_canonical"
 ```
 
-**Relative paths (recommended):**
-```yaml
-project_root: "."
-raw_data: "raw_data/Brain_Tumor_MRI_Dataset"
-preprocessed_data: "preprocessed_canonical"
-```
+**Note:** The BrainDataSet folder should contain:
+- Training/ (with subfolders: glioma, meningioma, notumor, pituitary)
+- Testing/ (with same subfolders)
 
 ### In Python/Notebooks
 
@@ -305,7 +303,7 @@ print("\n✓ Setup verification complete!")
 After setup, your project should look like:
 
 ```
-C:\path\to\BrainTumorProject\
+C:\Users\manav\Documents\GitHub\BrainTumorProject\
 ├── tumorNet_lite\              ← Your working directory
 │   ├── 01_setup_and_config.ipynb
 │   ├── 02_train_tumornet_lite.ipynb
@@ -317,10 +315,9 @@ C:\path\to\BrainTumorProject\
 │   └── requirements.txt
 │
 ├── config.yaml                 ← Configuration file
-├── raw_data\                   ← Your raw MRI images
-│   └── Brain_Tumor_MRI_Dataset\
-│       ├── Training\
-│       └── Testing\
+├── BrainDataSet\               ← Your raw MRI images
+│   ├── Training\               (glioma, meningioma, notumor, pituitary)
+│   └── Testing\                (same structure)
 │
 ├── preprocessed_canonical\     ← Created by preprocessing
 ├── checkpoints\                ← Model checkpoints
